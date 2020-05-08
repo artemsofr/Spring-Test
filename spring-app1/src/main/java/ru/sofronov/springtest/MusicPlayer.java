@@ -9,7 +9,12 @@ public class MusicPlayer {
 		this.music = music;
 	}
 
-
+	public MusicPlayer() {
+		// TODO Auto-generated constructor stub
+	}
+	public void setMusic(Music music) {
+		this.music = music;
+	}
 	public  void playMusic() {
 		
 		String song = music.getSong();

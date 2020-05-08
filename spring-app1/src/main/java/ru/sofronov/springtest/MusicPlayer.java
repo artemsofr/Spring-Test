@@ -1,9 +1,17 @@
 package ru.sofronov.springtest;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.core.env.SystemEnvironmentPropertySource;
+
 public class MusicPlayer {
 	private Music music;
 	private String name;
 	private int volume;
+	private String song;
+	
+	private List <Music> musicList = new ArrayList<>();
 	
 	public MusicPlayer(Music music) {
 		
@@ -23,12 +31,24 @@ public class MusicPlayer {
 	public void setVolume(int volume) {
 		this.volume = volume;
 	}
+	public void setMusicList(List<Music> musicList) {
+		this.musicList = musicList;
+	}
 	
 	public  void playMusic() {
 		
-		String song = music.getSong();
+		song = music.getSong();
 		System.out.println("Playing song " + song + ".");
 		System.out.println(name + " likes this song. He turns up volume to " + volume + ".");
 	}
+	
+	public  void playMusicList() {		
 		
+		for (Music music : musicList) {
+			
+			song = music.getSong();
+			System.out.println("Playing song " + music.getSong() + ".+");
+		}
+				
+	}
 }

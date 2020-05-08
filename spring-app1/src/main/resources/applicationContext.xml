@@ -15,6 +15,9 @@
 	<bean id ="musicPlayer"
 		  class="ru.sofronov.springtest.MusicPlayer">
 		  <property name="music" ref="musicBean"/>
+		  
+		  <property name="name" value="John"/>
+		  <property name="volume" value="50"/>
 		 
 	</bean>
 	

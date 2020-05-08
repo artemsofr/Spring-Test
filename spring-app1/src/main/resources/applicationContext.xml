@@ -9,7 +9,7 @@
 	   
 	<bean id ="testBean"
 		  class="ru.sofronov.springtest.TestBean">
-		 <constructor-arg value="Neil"/>
+		 <constructor-arg value="Art"/>
 	</bean>
 	
 </beans>

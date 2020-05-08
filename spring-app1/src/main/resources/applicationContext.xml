@@ -7,9 +7,9 @@
 	   http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context.xsd">
 	   
-	<bean id ="testBean"
-		  class="ru.sofronov.springtest.TestBean">
-		 <constructor-arg value="Art"/>
+	<bean id ="musicBean"
+		  class="ru.sofronov.springtest.RockMusic">
+		 
 	</bean>
 	
 </beans>

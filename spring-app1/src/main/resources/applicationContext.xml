@@ -14,8 +14,8 @@
 	<bean id ="musicBean2"
 		 			 	class="ru.sofronov.springtest.RockMusic"/>
 	<bean id ="musicBean3"
-		 				class="ru.sofronov.springtest.PopMusic"/>
-
+		 				class="ru.sofronov.springtest.PopMusic"/>	
+	
 	<bean id ="musicPlayer"
 		  class="ru.sofronov.springtest.MusicPlayer">
 		  <property name="music" ref="musicBean1"/>
@@ -28,8 +28,8 @@
 		  <property name="musicList">
 		  		<list>
 		  			<ref bean="musicBean1"/>
-		  			<ref bean="musicBean1"/>
-		  			<ref bean="musicBean1"/>					
+		  			<ref bean="musicBean2"/>
+		  			<ref bean="musicBean3"/>					
 				</list>
 		  </property>
 		  

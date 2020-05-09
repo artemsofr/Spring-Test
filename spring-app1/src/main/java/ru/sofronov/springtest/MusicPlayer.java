@@ -3,17 +3,20 @@ package ru.sofronov.springtest;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
+	@Autowired
 	private Music music;
 	private String name;
 	private int volume;
 	private String song;
 	
 	private List <Music> musicList = new ArrayList<>();
+	
 	
 	public MusicPlayer(Music music) {
 		
@@ -23,6 +26,7 @@ public class MusicPlayer {
 	public MusicPlayer() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public void setMusic(Music music) {
 		this.music = music;
 	}

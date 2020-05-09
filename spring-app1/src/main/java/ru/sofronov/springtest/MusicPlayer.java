@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.env.SystemEnvironmentPropertySource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
 	private Music music;
 	private String name;
@@ -39,7 +41,6 @@ public class MusicPlayer {
 		
 		song = music.getSong();
 		System.out.println("Playing song " + song + ".");
-		System.out.println(name + " likes this song. He turns up volume to " + volume + ".");
 	}
 	
 	public  void playMusicList() {		

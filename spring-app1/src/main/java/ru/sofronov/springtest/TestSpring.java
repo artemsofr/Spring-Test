@@ -9,39 +9,16 @@ public class TestSpring {
 		ClassPathXmlApplicationContext context = 
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		ClassicalMusic classicalMusic = context.getBean("musicBean1", ClassicalMusic.class);
-		ClassicalMusic classicalMusic1 = context.getBean("musicBean1", ClassicalMusic.class);
-		ClassicalMusic classicalMusic2 = context.getBean("musicBean1", ClassicalMusic.class);
+		Music music = context.getBean("rockMusic", Music.class);
+		Music music1 = context.getBean("classicalMusic", Music.class);
 		
-		System.out.println(classicalMusic);
-		System.out.println(classicalMusic1);
-		System.out.println(classicalMusic2);
+		MusicPlayer musicPlayer = new MusicPlayer(music);
 		
-//		MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//		MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//		MusicPlayer thirdMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+		musicPlayer.playMusic();
 		
-		//musicPlayer.playMusicList();
+		MusicPlayer musicPlayer1 = new MusicPlayer(music1);
 		
-//		firstMusicPlayer.playMusic();
-//		
-//		boolean comparison = firstMusicPlayer == secondMusicPlayer;
-//		boolean comparison1 = firstMusicPlayer == thirdMusicPlayer;
-//		boolean comparison2 = secondMusicPlayer == thirdMusicPlayer;
-//		
-//		System.out.println(comparison);
-//		System.out.println(comparison1);
-//		System.out.println(comparison2);
-//		System.out.println(firstMusicPlayer);
-//		System.out.println(secondMusicPlayer);
-//		System.out.println(thirdMusicPlayer);
-//		
-//		
-//		RockMusic rm = new RockMusic();
-//		firstMusicPlayer.setMusic(rm);
-//		firstMusicPlayer.playMusic();
-//				
-//		secondMusicPlayer.playMusic();
+		musicPlayer1.playMusic();
 				
 		context.close();
 	}

@@ -17,7 +17,8 @@
 		 				class="ru.sofronov.springtest.PopMusic"/>	
 	
 	<bean id ="musicPlayer"
-		  class="ru.sofronov.springtest.MusicPlayer">
+		  class="ru.sofronov.springtest.MusicPlayer"
+		  scope="prototype">
 		  <property name="music" ref="musicBean1"/>
 		  
 		  

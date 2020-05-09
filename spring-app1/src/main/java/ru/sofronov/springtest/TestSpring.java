@@ -13,7 +13,9 @@ public class TestSpring {
 		ClassicalMusic classicalMusic1 = context.getBean("musicBean1", ClassicalMusic.class);
 		ClassicalMusic classicalMusic2 = context.getBean("musicBean1", ClassicalMusic.class);
 		
-		System.out.println(classicalMusic.getSong());
+		System.out.println(classicalMusic);
+		System.out.println(classicalMusic1);
+		System.out.println(classicalMusic2);
 		
 //		MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //		MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);

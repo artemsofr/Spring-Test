@@ -11,9 +11,11 @@
 	
 	<bean id ="musicBean1"
 		  	class="ru.sofronov.springtest.ClassicalMusic"
-		  	scope="prototype"
+		  	
 		  	init-method="doMyInit"
-		  	destroy-method="doMyDestroy"/>		 
+		  	destroy-method="doMyDestroy"
+		  	factory-method="getClassicalMusic"/>
+		  			 
 	<bean id ="musicBean2"
 		 			 	class="ru.sofronov.springtest.RockMusic"/>
 	<bean id ="musicBean3"

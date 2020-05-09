@@ -1,6 +1,14 @@
 package ru.sofronov.springtest;
 
 public class ClassicalMusic implements Music {
+	private ClassicalMusic() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static ClassicalMusic getClassicalMusic () {
+		
+		return new ClassicalMusic();
+	}
 	
 	public void doMyInit() {
 		

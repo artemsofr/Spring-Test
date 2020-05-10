@@ -2,5 +2,5 @@ package ru.sofronov.springtest;
 
 public interface Music {
 	
-	String getSong();;		
+	String getSong(int r);		
 }

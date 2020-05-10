@@ -2,33 +2,44 @@ package ru.sofronov.springtest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-	@Autowired
-	private Music music;
+	
+	private Music music1;
+	private Music music2;
+	private Music music3;
 	private String name;
 	private int volume;
 	private String song;
+	private String song2;
+	private String song1;
+	
 	
 	private List <Music> musicList = new ArrayList<>();
 	
 	
-	public MusicPlayer(Music music) {
+	@Autowired
+	public MusicPlayer(@Qualifier ("classicalMusic") Music music1, 
+			@Qualifier ("rockMusic") Music music2, @Qualifier ("popMusic") Music music3) {
 		
-		this.music = music;
+		this.music1 = music1;
+		this.music2 = music2;
+		this.music3 = music3;
 	}
 
 	public MusicPlayer() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void setMusic(Music music) {
-		this.music = music;
+	public void setMusic(Music music1) {
+		this.music1 = music1;
 	}
 	
 	public void setName(String name) {
@@ -41,18 +52,34 @@ public class MusicPlayer {
 		this.musicList = musicList;
 	}
 	
-	public  void playMusic() {
+	public String playMusic(MusicGenre musicGenre ) {		
 		
-		song = music.getSong();
-		System.out.println("Playing song " + song + ".");
+		Random random = new Random();
+		int r = random.nextInt(3);	
+		
+		switch (musicGenre) {
+		case CLASSICAL: 
+			song = music1.getSong(r);
+			break;
+		case ROCK: 
+			song = music2.getSong(r);
+			break;
+		case POP: 
+			song = music3.getSong(r);
+			break;	
+		default:
+			song = "Error, it's not a song";		
+		}	
+				
+		return "Playing song " + (r+1) + "." + song;
 	}
 	
 	public  void playMusicList() {		
 		
-		for (Music music : musicList) {
+		for (Music musicFromList : musicList) {
 			
-			song = music.getSong();
-			System.out.println("Playing song " + music.getSong() + ".+");
+			song = musicFromList.getSong(1);
+			System.out.println("Playing song " + musicFromList.getSong(1) + ".+");
 		}
 				
 	}

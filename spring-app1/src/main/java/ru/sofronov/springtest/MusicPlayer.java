@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Component;
 
@@ -15,13 +16,27 @@ public class MusicPlayer {
 	private Music music1;
 	private Music music2;
 	private Music music3;
+	@Value ("${MusicPlayer.name}")
 	private String name;
+	@Value ("${MusicPlayer.volume}")
 	private int volume;
 	private String song;
 	private String song2;
 	private String song1;
 	
 	
+	public Music getMusic1() {
+		return music1;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public int getVolume() {
+		return volume;
+	}
+
 	private List <Music> musicList = new ArrayList<>();
 	
 	
@@ -71,7 +86,8 @@ public class MusicPlayer {
 			song = "Error, it's not a song";		
 		}	
 				
-		return "Playing song " + (r+1) + "." + song;
+		return "Playing song " + (r+1) + "." + song + ". " 
+			+ name + " likes this song and he increase volume up to " + volume + ".";
 	}
 	
 	public  void playMusicList() {		

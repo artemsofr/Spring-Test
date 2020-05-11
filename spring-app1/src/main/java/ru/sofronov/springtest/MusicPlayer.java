@@ -23,6 +23,8 @@ public class MusicPlayer {
 	private String song;
 	private String song2;
 	private String song1;
+	private Random random;
+	private int r;
 	
 	
 	public Music getMusic1() {
@@ -49,6 +51,11 @@ public class MusicPlayer {
 		this.music3 = music3;
 	}
 	
+	public MusicPlayer(List <Music> musicList) {
+		
+		this.musicList = musicList;
+	}
+
 	public MusicPlayer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -69,8 +76,8 @@ public class MusicPlayer {
 	
 	public String playMusic(MusicGenre musicGenre ) {		
 		
-		Random random = new Random();
-		int r = random.nextInt(3);	
+		random = new Random();
+		r = random.nextInt(3);	
 		
 		switch (musicGenre) {
 		case CLASSICAL: 
@@ -91,12 +98,17 @@ public class MusicPlayer {
 	}
 	
 	public  void playMusicList() {		
-		
+		random = new Random();
+		r = random.nextInt(3);
 		for (Music musicFromList : musicList) {
 			
-			song = musicFromList.getSong(1);
-			System.out.println("Playing song " + musicFromList.getSong(1) + ".+");
+			song = musicFromList.getSong(r);
+			System.out.println("Playing song " + song + ".+");
 		}
-				
+		r = random.nextInt(3);
+		Music genre = musicList.get(r);
+		r = random.nextInt(3);
+		String songFromGenre = genre.getSong(r);	
+		System.out.println("Playing song " + songFromGenre + ".*");		
 	}
 }

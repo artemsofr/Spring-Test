@@ -1,5 +1,9 @@
 package ru.sofronov.springtest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,11 +31,14 @@ public class SpringConfig {
 	}
 	
 	@Bean
-	public MusicPlayer musicPlayer() {
-		
-		return new MusicPlayer(classicalMusic(), rockMusic(), popMusic());
+	public List<Music> musicList(){
+				
+		return Arrays.asList(classicalMusic(), rockMusic(), popMusic());
 	}
 	
-	
-	
+	@Bean	
+	public MusicPlayer musicPlayer() {
+		
+		return new MusicPlayer(musicList());
+	}
 }

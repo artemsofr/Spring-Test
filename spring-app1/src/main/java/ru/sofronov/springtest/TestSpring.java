@@ -30,10 +30,12 @@ public class TestSpring {
 
 		MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 		
-		String test = musicPlayer.playMusic(MusicGenre.CLASSICAL);
-		System.out.println(test);
-		System.out.println(musicPlayer.getName());
-		System.out.println(musicPlayer.getVolume());
+//		String test = musicPlayer.playMusic(MusicGenre.CLASSICAL);
+//		System.out.println(test);
+//		System.out.println(musicPlayer.getName());
+//		System.out.println(musicPlayer.getVolume());
+		
+		musicPlayer.playMusicList();
 		
 		Music music = context.getBean("classicalMusic", Music.class);
 		Music music1 = context.getBean("classicalMusic", Music.class);

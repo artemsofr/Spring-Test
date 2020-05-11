@@ -2,7 +2,7 @@ package ru.sofronov.springtest;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class PopMusic implements Music {
 	
 	String[] popularSongs = new String[3];

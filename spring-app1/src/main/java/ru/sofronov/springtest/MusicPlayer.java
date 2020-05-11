@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class MusicPlayer {
 	
 	private Music music1;
@@ -40,7 +40,7 @@ public class MusicPlayer {
 	private List <Music> musicList = new ArrayList<>();
 	
 	
-	@Autowired
+//	@Autowired
 	public MusicPlayer(@Qualifier ("classicalMusic") Music music1, 
 			@Qualifier ("rockMusic") Music music2, @Qualifier ("popMusic") Music music3) {
 		
@@ -48,7 +48,7 @@ public class MusicPlayer {
 		this.music2 = music2;
 		this.music3 = music3;
 	}
-
+	
 	public MusicPlayer() {
 		// TODO Auto-generated constructor stub
 	}

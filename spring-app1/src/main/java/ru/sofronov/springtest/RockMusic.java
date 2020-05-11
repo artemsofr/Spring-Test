@@ -2,7 +2,7 @@ package ru.sofronov.springtest;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class RockMusic implements Music {
 	
 	String[] rockSongs = new String[3];

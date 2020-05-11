@@ -3,11 +3,11 @@ package ru.sofronov.springtest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Computer {
 	
 	private int id;
-	@Autowired
+//	@Autowired
 	private MusicPlayer musicPlayer;	
 	
 	public Computer() {
@@ -18,5 +18,6 @@ public class Computer {
 		id = 1;
 		System.out.println("Computer " + id + " : " + musicPlayer.playMusic(genre));
 	}
+	
 	
 }
